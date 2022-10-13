@@ -4,7 +4,7 @@ from tox.action import Action
 from tox.config import Config, DepConfig
 from tox.venv import VirtualEnv
 
-__version__ = '0.1'
+__version__ = '0.2'
 
 
 @tox.hookimpl
