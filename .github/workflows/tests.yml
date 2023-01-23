@@ -33,5 +33,3 @@ jobs:
       - name: Run tests
         run: |
           tox
-      - name: Codecov
-        uses: codecov/codecov-action@v3
