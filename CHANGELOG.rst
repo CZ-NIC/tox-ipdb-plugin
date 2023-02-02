@@ -5,6 +5,11 @@ ChangeLog
    :backlinks: none
    :local:
 
+0.3 (2023-02-02)
+----------------
+
+* Update for tox v4.
+
 0.2 (2022-10-13)
 ----------------
 

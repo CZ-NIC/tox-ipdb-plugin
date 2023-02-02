@@ -4,7 +4,7 @@ from distutils.version import LooseVersion
 
 import tox
 
-__version__ = '0.2'
+__version__ = '0.3'
 _LOGGER = logging.getLogger(__name__)
 
 
