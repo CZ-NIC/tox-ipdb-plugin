@@ -1,6 +1,5 @@
 """Tox plugin which installs ipdb in tox environments."""
 import logging
-from distutils.version import LooseVersion
 
 import tox
 
@@ -8,7 +7,7 @@ __version__ = '0.3'
 _LOGGER = logging.getLogger(__name__)
 
 
-if LooseVersion(tox.__version__) < LooseVersion('4.0.0'):
+if tox.__version__ < '4':
     # TOX 3
     from tox import hookimpl  # type: ignore[attr-defined]
     from tox.action import Action
@@ -60,7 +59,7 @@ else:
 
         override = Override('{}.deps={}'.format(env_conf.name, '\n'.join(new_deps)))
         # API changed in tox 4.15.0
-        if LooseVersion(tox.__version__) < LooseVersion('4.15.0'):
+        if tox.__version__ < '4.15':
             env_conf.loaders[0].overrides[override.key] = override  # type: ignore[assignment]
         else:
             env_conf.loaders[0].overrides.setdefault(override.key, []).append(override)
