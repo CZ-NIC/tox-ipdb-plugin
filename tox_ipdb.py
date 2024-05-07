@@ -59,7 +59,11 @@ else:
         _LOGGER.debug("tox-ipdb-plugin[%s]: New deps: %s", env_conf.name, new_deps)
 
         override = Override('{}.deps={}'.format(env_conf.name, '\n'.join(new_deps)))
-        env_conf.loaders[0].overrides[override.key] = override
+        # API changed in tox 4.15.0
+        if LooseVersion(tox.__version__) < LooseVersion('4.15.0'):
+            env_conf.loaders[0].overrides[override.key] = override  # type: ignore[assignment]
+        else:
+            env_conf.loaders[0].overrides.setdefault(override.key, []).append(override)
 
         # Clear cache
         env_conf._defined['deps']._cache = _PLACE_HOLDER  # type: ignore[attr-defined]  # _cache is not public API
