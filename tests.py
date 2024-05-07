@@ -87,7 +87,7 @@ class TestToxTestenvCreate(TestCase):
 class ToxAddEnvConfigTest(TestCase):
     def _test(self, env_name: str, initial_deps: str, result: List[str]) -> None:
         root = Path(__file__).parent
-        source = IniSource(Path('/tmp/does/not/exist'), '')  # nosec
+        source = IniSource(Path('/tmp/does/not/exist'), '')  # noqa: S108
         parsed = Parsed(override=(), root_dir=root, work_dir=root)
         state = State(Options(parsed, None, source, sentinel.cmd_handlers, sentinel.tox_handler), [])
 
