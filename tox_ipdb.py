@@ -3,7 +3,7 @@ import logging
 
 import tox
 
-__version__ = '0.3'
+__version__ = '1.0'
 _LOGGER = logging.getLogger(__name__)
 
 

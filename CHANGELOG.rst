@@ -5,6 +5,15 @@ ChangeLog
    :backlinks: none
    :local:
 
+1.0 (2024-05-14)
+----------------
+
+* Drop support for python 3.7.
+* Add support for python 3.11.
+* Add support for python 3.12.
+* Fix for tox 4.15.
+* Update project setup.
+
 0.3 (2023-02-02)
 ----------------
 
